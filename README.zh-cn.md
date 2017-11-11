@@ -96,43 +96,43 @@ git clone https://github.com/hantsy/angularjs-springmvc-sample-boot
 
 3. 浏览器打开 [http://localhost:3000](http://localhost:3000) 去测试
 
-### Run the project via Spring Boot maven plugin
+### 采用 Spring Boot maven plugin 运行项目
      
-1. Run the following command to resovle the dependencies of the frontend static resources.
+1. 运行下列命令来解决前端静态资源依赖
    
    ```
    npm install
    bower install
    ```
 
-2. Run the backend API server with `spring-boot` command. The parameter `-Dstatic-ui` will copy the static resources and package into the jar archive.
+2. 运行 `spring-boot` 后端 API 服务器 . 参数 `-Dstatic-ui` 将复制一份静态资源并打包进 jar 中
 
    ```
    mvn spring-boot:run -Dstatic-ui
    ```
 
-3. Go to [http://localhost:9000](http://localhost:9000) to test it. 
+3. 打开浏览器 [http://localhost:9000](http://localhost:9000) 来测试
 
-If you want to explore the REST API docs online, there is a *Swagger UI* configured for visualizing the REST APIs, just go to [http://localhost:9000/swagger-ui.html](http://localhost:9000/swagger-ui.html).
+如果你想在线浏览 REST API 文档, 这里有 *Swagger UI* 的一份可视化 REST APIs 配置, 浏览如下地址 [http://localhost:9000/swagger-ui.html](http://localhost:9000/swagger-ui.html).
  
-### Generate static REST API reference documentation
+### 生成静态 REST API 参考文档
 
-I have moved the REST docs generation configuration into a standalone Maven profile.
+我将 REST 文档生成配置移动到一个独立的 Maven 配置.
 
-Execute the following command to generate HTML and PDF format files for your REST APIs from Swagger API description file and Spring test code snippets(as code samples).
+执行下列命令将根据 Swagger API 描述和 Spring test 片段 (作为测试用例) 去生成 REST APIs 的 HTML 和 PDF 文件.
 
 ```
 mvn clean package -Drestdocs
 ```
 
-The detailed configuration is explained in [API documention](https://hantsy.gitbooks.io/build-a-restful-app-with-spring-mvc-and-angularjs/content/swagger.html) section.
+更加详细的配置在 [API 文档](https://hantsy.gitbooks.io/build-a-restful-app-with-spring-mvc-and-angularjs/content/swagger.html) 部分.
 
-When it is done, check the generated static docs in *target/asciidoc* folder, it includes a HTML 5 file(under html folder), and a PDF file(in pdf folder).
+当执行完成, 你将能看到 *target/asciidoc* 文件夹, 它包括一个 HTML 5 文件(在 html 文件夹下), 和一个 PDF 文件(在 pdf 文件夹下).
 
-Open the pdf document in Adobe Reader, it looks like.
+用 Adobe Reader打开 pdf 文档, 如下图所示.
 
 ![pdf](https://github.com/hantsy/angularjs-springmvc-sample-boot/blob/master/restdocs.png) 
  
 ### Docker
 
-You can run the project in multistage Docker building development environment, check [Multistage Builds](https://github.com/hantsy/devops-sandbox/blob/master/multistage.md).
+你能采用多个 Docker 开发环境来构建运行该项目, 查看 [Multistage Builds](https://github.com/hantsy/devops-sandbox/blob/master/multistage.md) 部分.
